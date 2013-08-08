@@ -1,6 +1,35 @@
-%div
-	=link_to c do 
-		.well
-			=image_tag "#{c.car_photo(:medium)}", :class=>"car-thumb"
-	%h6
-		=c.user.name
+.page-header.no-margin
+	.media.padding-top.padding-bottom
+		.pull-left.margin-right
+			=image_tag "#{c.car_photo(:thumb)}", :class=>"media-object"
+		.media-body
+			=link_to c do
+				%h4.no-margin-top
+					=c.make
+					=c.car_model
+			%p
+				Year:
+				%strong
+					=c.year
+			%p
+				Color:
+				%strong
+					=c.color
+			%p
+				Doors:
+				%strong
+					=c.number_of_doors
+			%h5
+				Owner
+			.half-margin-bottom
+				=image_tag c.user.avatar.url(:thumb), :class=>"half-margin-right"
+				=link_to c.user do
+					=c.user.name
+			%ul.inline
+				%li
+					%i.icon-mobile-phone{:style=>"font-size:18pt;"}
+					=number_to_phone(c.user.phone_number, area_code: true) 
+				%li
+					%i.icon-envelope{:style=>"font-size:15pt;"}
+					= link_to "mailto:#{c.user.email}" do
+						=c.user.email 

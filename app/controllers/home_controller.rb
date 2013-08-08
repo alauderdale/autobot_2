@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
-    @cars = Car.order()
+    @users = User.order('name ASC')
+    @cars = Car.order('make ASC')
   end
 end

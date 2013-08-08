@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
 
   def index
-      @cars = Car.order()
+      @cars = Car.order('make ASC')
   end
 
   def show
@@ -21,7 +21,7 @@ class CarsController < ApplicationController
     @car.user_id = current_user.id
     if @car.save
     #If save succeeds return to list action
-      redirect_to cars_path, :notice => "Car Added"
+      redirect_to root_path, :notice => "Car Added"
     #if form fails, redisplay form so user can fix problems
     else
       flash[:alert]= "Please check the fields and try again"

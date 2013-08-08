@@ -1,4 +1,42 @@
--@cars.each do |c|
-	=link_to c do
-		=c.make
-		=c.car_model
+.page-header
+	%h4
+		Car List
+%table.table.table-striped
+	%thead
+		%th
+			Make
+		%th
+			Model
+		%th
+			Year
+		%th
+			Color
+		%th
+			Doors
+		%th
+			Owner
+		%th
+			Owner Phone
+		%th
+			Owner Email
+	%tbody
+		-@cars.each do |c|
+			%tr
+				%td
+					=link_to c do
+						=c.make
+				%td
+					=c.car_model
+				%td
+					=c.year
+				%td
+					=c.color
+				%td
+					=c.number_of_doors
+				%td
+					=link_to c.user do
+						=c.user.name
+				%td
+					=number_to_phone(c.user.phone_number, area_code: true) 
+				%td
+					=c.user.email

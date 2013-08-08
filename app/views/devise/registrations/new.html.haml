@@ -6,6 +6,7 @@
   = f.input :email, :required => true
   = f.input :password, :required => true
   = f.input :password_confirmation, :required => true
-  = f.input :phone_number, :required => true
+  = f.input :phone_number, :required => true, :placeholder => "example: 9883457766"
+  = f.file_field :avatar, :required => false
   = f.button :submit, 'Sign up', :class => 'btn-primary'
 = render "devise/shared/links"

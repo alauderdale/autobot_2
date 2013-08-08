@@ -1,7 +1,16 @@
 .row
-	.span12
-		.row
-			-@cars.in_groups_of(4, false) do |row_cars|
-				-for c in row_cars
-					.span3
-						= render partial: "shared/car_thumb", locals: {c: c}
+	.span9
+		.page-header
+			%h4
+				Cars
+		-@cars.each do |c|
+			= render partial: "shared/car_thumb", locals: {c: c}
+	.span3
+		.page-header
+			%h5
+				Drivers
+		-@users.each do |u|
+			.half-margin-bottom
+				=image_tag u.avatar.url(:thumb), :class=>"half-margin-right", :style=>"width:16px; height:16px;"
+				=link_to u do
+					=u.name
