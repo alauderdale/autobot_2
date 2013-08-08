@@ -1,7 +1,4 @@
-=@car.make
-=@car.car_model
-%br
-=image_tag @car.car_photo.url(:thumb)
+= render partial: "shared/car_thumb", locals: {c: @car}
 %br
 -if @car.user.id == current_user.id
   / Button to trigger modal
