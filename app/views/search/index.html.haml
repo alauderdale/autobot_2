@@ -1,6 +1,5 @@
 %h3
-	cool
+	Search
 
-=@search_users
-%br
-=@search_cars
+-@search_cars.each do |c|
+	= render partial: "shared/car_thumb", locals: {c: c}
