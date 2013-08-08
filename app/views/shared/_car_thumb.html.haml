@@ -1,0 +1,6 @@
+%div
+	=link_to c do 
+		.well
+			=image_tag "#{c.car_photo(:medium)}", :class=>"car-thumb"
+	%h6
+		=c.user.name
