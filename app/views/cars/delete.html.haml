@@ -1,0 +1,14 @@
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+
+.page.delete
+  %h2
+    Delete Car
+
+  = form_for(:car, :url => {:action => 'destroy_car', :id => @car.id}) do |f|
+    %p
+      Are you sure you want to permanently delete this car?
+    %p.refrence-name
+      Shot Name:
+      = @car.title
+    .form-buttons
+      = submit_tag("Delete Shot")

@@ -1,0 +1,17 @@
+.field
+  = f.label 'make'
+  = f.text_field :make, :required => true
+.field
+  = f.label 'model'
+  = f.text_field :car_model, :required => true
+.field
+  = f.label 'year'
+  = f.text_field :year, :required => true
+.field
+  = f.label 'color'
+  = f.text_field :color, :required => true
+.field
+  = f.file_field :car_photo, :required => false
+.field
+  = f.label 'description'
+  = f.text_area :description, :rows => 5
