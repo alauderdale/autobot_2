@@ -14,3 +14,10 @@
 				=image_tag u.avatar.url(:thumb), :class=>"half-margin-right", :style=>"width:16px; height:16px;"
 				=link_to u do
 					=u.name
+
+.row
+	.span12
+		= form_tag search_index_path, :method => 'get' do
+			%p
+				= text_field_tag :search, params[:search]
+				= submit_tag "Search", :name => nil

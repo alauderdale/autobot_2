@@ -9,5 +9,6 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   end
   devise_for :cars
   resources :cars
+  resources :search
 	match ':controller(/:action(/:id))(.:format)'
 end

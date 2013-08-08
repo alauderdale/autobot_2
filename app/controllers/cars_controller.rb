@@ -62,6 +62,10 @@ class CarsController < ApplicationController
     redirect_to cars_path, :notice => "Car Deleted"
   end
 
+  def search
+
+  end
+
 
 end
 
