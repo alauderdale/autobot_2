@@ -1,5 +1,24 @@
-%h3
-	Search
-
--@search_cars.each do |c|
-	= render partial: "shared/car_thumb", locals: {c: c}
+.row
+	.span9
+		.page-header
+			%h4
+				Search
+		-if @search_cars.count > 0
+			-@search_cars.each do |c|
+				= render partial: "shared/car_thumb", locals: {c: c}
+		-else
+			%p.muted
+				No Cars
+	.span3
+		.page-header
+			%h5
+				Drivers
+		-if @search_users.count > 0
+			-@search_users.each do |u|
+				.half-margin-bottom
+					=image_tag u.avatar.url(:thumb), :class=>"half-margin-right", :style=>"width:16px; height:16px;"
+					=link_to u do
+						=u.name
+		-else
+			%p.muted
+				No Drivers
