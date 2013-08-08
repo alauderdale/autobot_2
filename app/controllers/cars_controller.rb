@@ -24,7 +24,7 @@ class CarsController < ApplicationController
       redirect_to cars_path, :notice => "Car Added"
     #if form fails, redisplay form so user can fix problems
     else
-      flash[:alert]= "Nope"
+      flash[:alert]= "Please check the fields and try again"
       render :action => :new
 
     end

@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20130808171426) do
     t.string   "make"
     t.string   "car_model"
     t.string   "color"
-    t.string   "year"
-    t.string   "description"
+    t.integer  "year"
+    t.integer  "number_of_doors"
     t.integer  "user_id"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20130808171426) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "phone_number"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"

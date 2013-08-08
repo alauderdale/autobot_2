@@ -11,14 +11,6 @@ $black-color:#2a2929;
 $link-color:#003b4c;
 
 
-body{
-  font-size:15px;
-  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-  -webkit-text-size-adjust: 100%;
-  width:100%;
-  line-height: $baseline;
-}
-
 // header
 
 .logo{
