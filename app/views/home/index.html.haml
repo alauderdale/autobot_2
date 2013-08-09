@@ -1,3 +1,14 @@
+-if ! current_user
+	.hero-unit
+		%h2.margin-bottom
+			Welcome to Autobot
+		%p.lead
+			Making life easier since 2013.
+		%a.btn.btn-large.half-margin-bottom{:href=>"#{new_user_registration_path}"}
+			Sign Up
+		= link_to (new_user_session_path) , :class=>'btn btn-large half-margin-bottom' do
+			Login
+
 .row
 	.span9
 		.page-header

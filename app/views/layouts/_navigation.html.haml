@@ -14,7 +14,7 @@
           = link_to 'Admin', users_path
     %ul.nav.pull-right
       %li
-        %a.text-uppercase{:href=>"#{new_car_path}"}
+        %a{:href=>"#{new_car_path}"}
           %i.icon-truck.icon-white
           Add a Car
       %li.dropdown
@@ -30,12 +30,16 @@
             = link_to 'Edit account', edit_user_registration_path
           %li
             = link_to 'Logout', destroy_user_session_path, :method=>'delete'
-      %li
+      %li.margin-left
         = form_tag search_index_path, :method => 'get', :class=>"navbar-search" do
-          = text_field_tag :search, params[:search], :class=>"search-query" , :placeholder => "Search for cars or people"
+          = text_field_tag :search, params[:search], :class=>"search-query", :placeholder => "Search for cars or people"
   - else
     %ul.nav
       %li
         = link_to 'Sign up', new_user_registration_path
       %li
         = link_to 'Login', new_user_session_path
+    %ul.nav.pull-right
+      %li.margin-left
+        = form_tag search_index_path, :method => 'get', :class=>"navbar-search" do
+          = text_field_tag :search, params[:search], :class=>"search-query", :placeholder => "Search for cars or people"

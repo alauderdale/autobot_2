@@ -15,33 +15,34 @@
 								%i.icon-cog
 								Edit
 		.media-body
-			=link_to c do
-				%h4.no-margin-top
-					=c.make
-					=c.car_model
-			%p
-				Year:
-				%strong
-					=c.year
-			%p
-				Color:
-				%strong
-					=c.color
-			%p
-				Doors:
-				%strong
-					=c.number_of_doors
-			%p
-				Plate:
-				%strong
-					-if c.plate_number.blank?
-						%span.muted
-							not yet set
-					-else
-						=c.plate_number
+			.margin-bottom
+				=link_to c do
+					%h4.no-margin-top
+						=c.make
+						=c.car_model
+				%p
+					Year:
+					%strong
+						=c.year
+				%p
+					Color:
+					%strong
+						=c.color
+				%p
+					Doors:
+					%strong
+						=c.number_of_doors
+				%p
+					Plate:
+					%strong
+						-if c.plate_number.blank?
+							%span.muted
+								not yet set
+						-else
+							=c.plate_number
 						
 			%h5
-				Owner
+				Owner Info
 			.half-margin-bottom
 				=image_tag c.user.avatar.url(:thumb), :class=>"half-margin-right"
 				=link_to c.user do
