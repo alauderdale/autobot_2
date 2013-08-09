@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808220703) do
+ActiveRecord::Schema.define(:version => 20130809155023) do
 
   create_table "cars", :force => true do |t|
     t.string   "make"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130808220703) do
     t.string   "car_photo_content_type"
     t.integer  "car_photo_file_size"
     t.datetime "car_photo_updated_at"
+    t.string   "plate_number"
   end
 
   create_table "roles", :force => true do |t|

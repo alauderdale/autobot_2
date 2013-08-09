@@ -1,20 +1,23 @@
 .field
-  = f.label 'make'
+  = f.label 'make *'
   = f.text_field :make, :required => true
 .field
-  = f.label 'model'
+  = f.label 'model *'
   = f.text_field :car_model, :required => true
 .field
   = f.label 'year'
   = f.text_field :year, :required => true
 .field
-  = f.label 'color'
+  = f.label 'color *'
   = f.text_field :color, :required => true
 .field
-  = f.label 'number of doors'
+  = f.label 'number of doors *'
   = f.text_field :number_of_doors, :required => true
 .field
+  = f.label 'Plate Number (not required)'
+  = f.text_field :plate_number
+.field
   %label
-    Photo
+    Photo (not required)
   = f.file_field :car_photo, :required => false
 %hr

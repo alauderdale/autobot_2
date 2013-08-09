@@ -1,5 +1,5 @@
 %h1
-    Add a car
+    Add your car
 
 = form_for(:car, :url => {:action => 'create'}, :html => { :multipart => true }) do |f| 
     = render(:partial => 'form', :locals => {:f => f})

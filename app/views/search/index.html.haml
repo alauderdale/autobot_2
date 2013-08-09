@@ -2,7 +2,8 @@
 	.span9
 		.page-header
 			%h4
-				Search
+				Search / 
+				=@search
 		-if @search_cars.count > 0
 			-@search_cars.each do |c|
 				= render partial: "shared/car_thumb", locals: {c: c}

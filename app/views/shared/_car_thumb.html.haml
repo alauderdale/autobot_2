@@ -2,7 +2,18 @@
 	.media.padding-top.padding-bottom
 		.pull-left.margin-right
 			=link_to c do
-				=image_tag "#{c.car_photo(:thumb)}", :class=>"media-object car-photo"
+				=image_tag "#{c.car_photo(:thumb)}", :class=>"media-object half-margin-bottom car-photo"
+			-if current_user
+				-if c.user.id == current_user.id
+					%ul.inline
+						%li
+							= link_to({:action => 'destroy_car', :controller=>"cars", :id => c.id}, "data-confirm" => "are you sure?") do
+								%i.icon-trash 
+								Delete
+						%li
+							= link_to({:action => 'edit', :controller=>"cars", :id => c.id})do
+								%i.icon-cog
+								Edit
 		.media-body
 			=link_to c do
 				%h4.no-margin-top
@@ -20,6 +31,15 @@
 				Doors:
 				%strong
 					=c.number_of_doors
+			%p
+				Plate:
+				%strong
+					-if c.plate_number.blank?
+						%span.muted
+							not yet set
+					-else
+						=c.plate_number
+						
 			%h5
 				Owner
 			.half-margin-bottom

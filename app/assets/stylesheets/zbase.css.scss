@@ -205,7 +205,11 @@ $link-color:#003b4c;
 // car mages
 
 img.car-photo{
-	border-radius:4px;
+	border-radius:8px;
+  @include transition-duration(.2s);
+  &:hover{
+    opacity:.8;
+  }
 }
 
 
