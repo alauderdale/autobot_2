@@ -16,6 +16,7 @@
 				Cars
 		-@cars.each do |c|
 			= render partial: "shared/car_thumb", locals: {c: c}
+		= will_paginate @cars
 	.span3
 		.page-header
 			%h5

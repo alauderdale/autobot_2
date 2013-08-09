@@ -1,22 +1,2 @@
 = render partial: "shared/car_thumb", locals: {c: @car}
 
-
-/ Delete Modal
-/ #delete.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-/   .modal-header
-/     %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-/     %h3#myModalLabel 
-/       Delete Car
-/   .modal-body
-/     %p
-/       Are you sure you want to permanently delete this car?
-/     %p
-/       Car Name:
-/       = @car.make
-/   .modal-footer
-/     .btn-group
-/       %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} 
-/         Cancel
-/     .btn-group
-/       = form_for(:shot, :url => {:action => 'destroy_car', :id => @car.id}, :html => {:style => "margin-bottom:0;"}) do |f|
-/         = submit_tag("Delete Car", :class=>"btn btn-danger")

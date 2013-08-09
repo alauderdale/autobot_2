@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
 
   def index
-      @cars = Car.order('make ASC')
+      @cars = Car.page(params[:page]).order('make ASC')
   end
 
   def show

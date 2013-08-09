@@ -7,6 +7,7 @@
 		-if @search_cars.count > 0
 			-@search_cars.each do |c|
 				= render partial: "shared/car_thumb", locals: {c: c}
+			= will_paginate @search_cars
 		-else
 			%p.muted
 				No Cars

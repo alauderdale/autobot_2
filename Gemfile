@@ -7,6 +7,7 @@ gem 'textacular', "~> 3.0", require: 'textacular/rails'
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 gem "haml", "~> 4.0.3"
+gem 'will_paginate', '~> 3.0.0'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
