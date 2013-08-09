@@ -7,6 +7,7 @@
           %span.muted
             = @car.make
       .clearfix
+    =image_tag @car.car_photo.url(:medium)
   .span6
     = form_for(:car, :url => {:action => 'update_car', :id => @car.id}) do |f|
       .field
@@ -15,6 +16,19 @@
       .field
         = f.label 'model'
         = f.text_field :car_model
+      .field
+        = f.label 'year'
+        = f.text_field :year
+      .field
+        = f.label 'color'
+        = f.text_field :color
+      .field
+        = f.label 'number of doors'
+        = f.text_field :number_of_doors
+      .field
+        = f.label 'Photo'
+        = f.file_field :car_photo, :required => false
+      %hr
       .form-buttons
         = submit_tag("Update Car", :class=>"btn")
-        = link_to("Cancel", {:action => 'show'}, :class => 'btn')
+        = link_to("Cancel", {:action => 'show'}, :class => 'btn btn-danger')
