@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :phone_number, :avatar
   has_attached_file :avatar, :styles => { :medium => "70x70#", :thumb => "16x16#" }, :default_url => "/images/:style/avatar_missing.png"
-  has_many :cars
+  has_many :cars, :dependent => :destroy
   
 end
