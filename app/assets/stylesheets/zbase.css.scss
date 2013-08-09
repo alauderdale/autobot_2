@@ -207,6 +207,7 @@ $link-color:#00ba94;
 img.car-photo{
 	border-radius:8px;
   @include transition-duration(.2s);
+  border:3px solid #ddd;
   &:hover{
     opacity:.8;
   }
