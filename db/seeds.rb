@@ -20,3 +20,4 @@ user.add_role :admin
 user2 = User.find_or_create_by_email :name => "Alex Lauderdale", :email => "alauderdale@mac.com", :password => "password", :password_confirmation => "password", :phone_number => "9703963943"
 puts 'user: ' << user2.name
 user2.add_role :admin
+
