@@ -25,11 +25,6 @@
   %output#list
 %hr
 
-:css
-  .thumb {
-    height: 75px;
-    margin: 10px 5px 0 0;
-  }
 :javascript
     function handleFileSelect(evt) {
     var files = evt.target.files; // FileList object
@@ -50,7 +45,7 @@
           // Render thumbnail.
           var span = document.createElement('span');
           document.getElementById('list').innerHTML = "";
-          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+          span.innerHTML = ['<img class="uploader-thumb" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
         };
