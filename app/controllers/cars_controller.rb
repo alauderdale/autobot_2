@@ -59,7 +59,7 @@ class CarsController < ApplicationController
   def destroy_car
     car = Car.find(params[:id])
     car.destroy
-    redirect_to cars_path, :notice => "Car Deleted"
+    redirect_to root_path, :notice => "Car Deleted"
   end
 
   def search

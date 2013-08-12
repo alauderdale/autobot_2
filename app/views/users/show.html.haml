@@ -12,7 +12,11 @@
 
 .page-header
   %h5.no-margin-bottom
-    Cars
+    =@user.cars.count
+    -if @user.cars.count != 1
+      Cars
+    -else
+      Car
 
 -@user.cars.each do |c|
   = render :partial => 'shared/car_thumb', :locals => {:c => c}
