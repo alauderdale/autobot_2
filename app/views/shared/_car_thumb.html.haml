@@ -2,7 +2,7 @@
 	.media.padding-top.padding-bottom
 		.pull-left.margin-right
 			=link_to c do
-				=image_tag "#{c.car_photo(:thumb)}", :class=>"media-object half-margin-bottom car-photo"
+				=image_tag "#{c.car_photo(:medium)}", :class=>"media-object half-margin-bottom car-photo"
 			-if current_user
 				-if c.user.id == current_user.id
 					%ul.inline
